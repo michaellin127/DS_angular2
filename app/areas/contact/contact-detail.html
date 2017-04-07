@@ -1,0 +1,16 @@
+<div class="container">
+	<div class="row">&nbsp;</div>
+	<div class="row">
+
+		<p>
+			<a href [routerLink]="['/contacts']">Contacts</a> >>
+			{{ contact.first_name }} {{ contact.last_name }}
+		</p>
+
+		<h1>Contact Detail</h1>
+
+		<p>{{ contact | json }}</p>
+
+
+	</div>
+</div>

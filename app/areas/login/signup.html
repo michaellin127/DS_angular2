@@ -1,0 +1,132 @@
+<div mdl class="mdl-grid mdl-cell--hide-phone">
+	<div class="mdl-cell mdl-cell--12-col mdl-cell--hide-phone">&nbsp;</div>
+</div>
+
+<div mdl class="login-card mdl-card mdl-shadow--2dp">
+	<div class="mdl-card__title">
+		<h2 class="mdl-card__title-text"
+			i18n="Signup Page Title|Sign up for DropSign page title.">Sign up for DropSign</h2>
+	</div>
+	<div class="mdl-card__supporting-text">
+
+		<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+			<div mdl class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+				 [class.is-invalid]="f.controls.firstName?.touched && f.controls.firstName.value == ''">
+
+				<input
+					id="firstName"
+					name="firstName"
+					class="mdl-textfield__input"
+					type="text"
+					required
+					[(ngModel)]="signup.first_name">
+
+				<label class="mdl-textfield__label" for="firstName"
+					   i18n="First Name|First name of the user.">First Name</label>
+				<span class="mdl-textfield__error">
+					<span *ngIf="f.controls.firstName?.errors?.required"
+						  i18n="Required Message|Message to the user that a field is required.">Required.</span>
+				</span>
+			</div>
+
+			<div mdl class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+				 [class.is-invalid]="f.controls.lastName?.touched && f.controls.lastName.value == ''">
+
+				<input
+					id="lastName"
+					name="lastName"
+					class="mdl-textfield__input"
+					type="text"
+					required
+					[(ngModel)]="signup.last_name">
+
+				<label class="mdl-textfield__label" for="lastName"
+					   i18n="Last Name|Last name of the user.">Last Name</label>
+				<span class="mdl-textfield__error">
+					<span *ngIf="f.controls.lastName?.errors?.required"
+						  i18n="Required Message|Message to the user that a field is required.">Required.</span>
+				</span>
+			</div>
+
+			<div mdl class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+				 [class.is-invalid]="f.controls.email?.touched && (emailExists || f.controls.email.value == '')">
+
+				<input
+					id="email"
+					name="email"
+					class="mdl-textfield__input"
+					type="text"
+					required
+					pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+					[(ngModel)]="signup.email">
+
+				<label class="mdl-textfield__label" for="email"
+					   i18n="Email Address|Email of the user.">Email</label>
+				<span class="mdl-textfield__error">
+					<span *ngIf="f.controls.email?.errors?.required"
+						  i18n="Required Message|Message to the user that a field is required.">Required.</span>
+					<span *ngIf="f.controls.email?.errors?.pattern"
+						  i18n="Valid Email Message|Message to the user that the email they've entered must be in a valid email format.">Must be a valid email.</span>
+					<span *ngIf="emailExists"
+						  i18n="Email Exists Message|Message to the user that this email already exists in our system.">This email already exists in our system.</span>
+				</span>
+			</div>
+
+			<div mdl class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+				 [class.is-invalid]="f.controls.password?.touched && f.controls.password.value == ''">
+
+				<input id="password"
+					   name="password"
+					   type="password"
+					   class="mdl-textfield__input"
+					   required
+					   minlength="8"
+					   [(ngModel)]="signup.password">
+
+				<label class="mdl-textfield__label" for="password"
+					   i18n="Password|Password of the user.">Password</label>
+				<span class="mdl-textfield__error">
+					<span *ngIf="f.controls.password?.errors?.required"
+						  i18n="Required Message|Message to the user that a field is required.">Required.</span>
+					<span *ngIf="f.controls.password?.errors?.minlength"
+						  i18n="Minimum Length Message|Message to the user that the password entered must be greater than 8 characters.">Must be at least 8 characters.</span>
+				</span>
+
+			</div>
+
+			<div class="agree-check">
+				<label mdl for="agree" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" [class.is-invalid]="true">
+					<input type="checkbox" id="agree" name="agree" class="mdl-checkbox__input" required [(ngModel)]="termsAgree" />
+					<span class="mdl-checkbox__label"
+						  i18n="Agree to Terms|Message to the user that by signing up he agrees to DropSign terms.">By signing up, you agree to DropSign's <a href="http://www.dropsign.com/terms">terms and conditions</a>.</span>
+				</label>
+			</div>
+
+			<div class="btn-group">
+				<button mdl class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+						i18n="Sign Up Button|Sign up button label.">Sign Up</button> <div *ngIf="loading" mdl class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+
+				<div class="btn-or" i18n="Or Text|Or text, providing another method for signing up.">OR</div>
+
+				<div id="customBtn">
+					<button mdl class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+							i18n="Use My Google Account Button|Use my google account button label for users wanting to use google account to sign up."
+					>Use My <img height="20" src="/assets/images/google.svg"> Account</button> <div *ngIf="gLoading" mdl class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+				</div>
+			</div>
+
+			<p>&nbsp;</p>
+
+			<p class="mdl-typography--text-center"
+			   i18n="Already Have Account|Link for user to click to log in if they already have an account.">Already have an account? <a [routerLink]="['/login']">Log in.</a></p>
+
+		</form>
+
+	</div>
+	<div class="mdl-card__menu">
+		<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+			<i class="material-icons">lock open</i>
+		</button>
+	</div>
+</div>

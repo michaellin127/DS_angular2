@@ -1,0 +1,139 @@
+
+<div mdl class="mdl-grid">
+	<div class="mdl-cell mdl-cell--3-col">
+		<h3>Documents</h3>
+	</div>
+	<div class="mdl-cell mdl-cell--9-col">
+		<form action="#">
+			<div mdl class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+				<label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+					<i class="material-icons">search</i>
+				</label>
+				<div class="mdl-textfield__expandable-holder">
+					<input class="mdl-textfield__input" type="text" id="search" name="search" (keyup)="setSearchFilter($event)">
+					<label class="mdl-textfield__label" for="search"></label>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+
+		<div class="mdl-card mdl-shadow--2dp">
+			<div class="mdl-card__title">
+				<h2 class="mdl-card__title-text">Filter by Status</h2>
+			</div>
+			<div class="mdl-card__actions mdl-card--border">
+				<div class="mdl-list">
+
+					<div class="mdl-list__item" (click)="setStatusFilter('')">
+						<span class="mdl-list__item-primary-content">
+						  <i class="material-icons mdl-list__item-avatar">fiber_manual_record</i>
+						  <span>All</span>
+						</span>
+					</div>
+
+
+					<div class="mdl-list__item" *ngFor="let sf of statusFilters" (click)="setStatusFilter(sf.id)">
+						<span class="mdl-list__item-primary-content">
+						  <i class="material-icons mdl-list__item-avatar">fiber_manual_record</i>
+						  <span>{{ sf.status }}</span>
+						</span>
+						<a class="mdl-list__item-secondary-action" href="javascript:;">{{ sf.count | number }}</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="mdl-card mdl-shadow--2dp">
+			<div class="mdl-card__title">
+				<h2 class="mdl-card__title-text">Filter by Folder</h2>
+			</div>
+			<div class="mdl-card__actions mdl-card--border">
+				<div class="mdl-list">
+
+					<div class="mdl-list__item" (click)="setFolderFilter('')">
+						<span class="mdl-list__item-primary-content">
+						  <i class="material-icons mdl-list__item-avatar">fiber_manual_record</i>
+						  <span>All</span>
+						</span>
+					</div>
+
+					<div class="mdl-list__item" *ngFor="let ff of folderFilters" (click)="setFolderFilter(ff.id)">
+						<span class="mdl-list__item-primary-content">
+						  <i class="material-icons mdl-list__item-avatar">fiber_manual_record</i>
+						  <span>{{ ff.name }}</span>
+						</span>
+						<a class="mdl-list__item-secondary-action" href="javascript:;">{{ ff.count | number }}</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+	<div class="mdl-cell mdl-cell--9-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+
+		<div class="search-results"
+			 infinite-scroll
+			 [infiniteScrollDistance]="1"
+			 [infiniteScrollThrottle]="100"
+			 (scrolled)="onScroll()" style="height: 100%">
+
+		<table class="mdl-data-table mdl-shadow--2dp">
+			<thead>
+			<tr>
+				<th width="20">
+					<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-data-table__select" mdl>
+						<input type="checkbox" class="mdl-checkbox__input" />
+					</label>
+				</th>
+				<th class="mdl-data-table__cell--non-numeric"
+					[class.mdl-data-table__header--sorted-ascending]="params.sort == 'title'"
+					[class.mdl-data-table__header--sorted-descending]="params.sort == '-title'"
+					(click)="(params.sort == 'title')?setSortFilter('-title'):setSortFilter('title')">Title</th>
+				<th class="mdl-data-table__cell--non-numeric"
+					[class.mdl-data-table__header--sorted-ascending]="params.sort == 'status'"
+					[class.mdl-data-table__header--sorted-descending]="params.sort == '-status'"
+					(click)="(params.sort == 'status')?setSortFilter('-status'):setSortFilter('status')">Status</th>
+				<th class="mdl-data-table__cell--non-numeric"
+					[class.mdl-data-table__header--sorted-ascending]="params.sort == 'sender_name'"
+					[class.mdl-data-table__header--sorted-descending]="params.sort == '-sender_name'"
+					(click)="(params.sort == 'sender_name')?setSortFilter('-sender_name'):setSortFilter('sender_name')">Sender</th>
+				<th class="mdl-data-table__cell--non-numeric"
+					[class.mdl-data-table__header--sorted-ascending]="params.sort == 'created_at'"
+					[class.mdl-data-table__header--sorted-descending]="params.sort == '-created_at'"
+					(click)="(params.sort == 'created_at')?setSortFilter('-created_at'):setSortFilter('created_at')">Date</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr *ngIf="loadingDocs">
+				<td align="center" colspan="5" class="mdl-data-table__cell--non-numeric td-loader">
+					<div mdl class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+				</td>
+			</tr>
+			<tr *ngFor="let dc of docs">
+				<td mdl>
+					<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-data-table__select" mdl>
+						<input type="checkbox" class="mdl-checkbox__input" />
+					</label>
+				</td>
+				<td class="mdl-data-table__cell--non-numeric"><a href [routerLink]="['/document/', dc.id]">{{ dc.title }}</a></td>
+				<td class="mdl-data-table__cell--non-numeric">{{ dc.status }}</td>
+				<td class="mdl-data-table__cell--non-numeric">{{ dc.sender_name }}</td>
+				<td class="mdl-data-table__cell--non-numeric">{{ dc.created_at * 1000 | date:'LLLL, M yyyy'}}</td>
+			</tr>
+			<tr *ngIf="loadingMore">
+				<td align="center" colspan="5" class="mdl-data-table__cell--non-numeric td-loader">
+					<div mdl class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,56 @@
+.login-card {
+
+  //width: 280px;
+  margin: 0 auto;
+
+  .mdl-textfield {
+    width: 100%;
+  }
+
+  .mdl-textfield.is-upgraded .req {
+    color:red;
+  }
+
+  .mdl-spinner {
+    vertical-align: bottom;
+  }
+
+  .mdl-checkbox {
+    display: inline;
+  }
+
+  .mdl-checkbox__box-outline {
+    top: 0px;
+  }
+
+  .btn-group {
+    .mdl-button {
+      margin: 20px 0 0 0;
+    }
+
+    p {
+      margin: 0px;
+    }
+  }
+
+  .agree-check {
+    margin: 10px 0 0 0;
+  }
+
+  .btn-or {
+    margin: 20px 0 0 0;
+  }
+
+  .mdl-checkbox.is-upgraded .mdl-checkbox__input {
+    -webkit-appearance: checkbox !important;
+    width: auto;
+    height: auto;
+    left: 2px;
+    top: 5px;
+  }
+
+  #customBtn {
+    display: inline-block;
+  }
+
+}

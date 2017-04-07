@@ -1,0 +1,54 @@
+.mdl-grid {
+  //padding: 0 25px 0 25px;
+
+  .mdl-data-table {
+    table-layout:fixed;
+    width:100%;
+
+    th {
+      cursor: pointer;
+    }
+
+    td, th {
+      //width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+    }
+
+  }
+
+  .mdl-list {
+
+    .mdl-list__item {
+      font-size: 14px;
+      padding: 12px;
+      cursor: pointer;
+    }
+
+    .mdl-list__item:hover {
+      background-color: #eee;
+    }
+
+    .mdl-list__item-avatar {
+      font-size: 0px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .mdl-card {
+    h2 {
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+  }
+
+  .td-loader {
+    text-align: center;
+  }
+
+
+}

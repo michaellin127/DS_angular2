@@ -1,0 +1,94 @@
+<div mdl class="mdl-grid mdl-cell--hide-phone">
+	<div class="mdl-cell mdl-cell--12-col mdl-cell--hide-phone">&nbsp;</div>
+</div>
+
+<div mdl class="login-card mdl-card mdl-shadow--2dp">
+	<div class="mdl-card__title">
+		<h2 class="mdl-card__title-text"
+			i18n="Reset Your Password|Title used for page to reset password.">Reset Your Password</h2>
+	</div>
+	<div class="mdl-card__supporting-text">
+
+		<form (ngSubmit)="onSubmit(f)" #f="ngForm" novalidate>
+
+			<div mdl class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+				 [class.is-invalid]="f.controls.password?.touched && !f.controls.password.valid">
+
+				<input id="password"
+					   name="password"
+					   type="password"
+					   class="mdl-textfield__input"
+					   required
+					   minlength="8"
+					   [(ngModel)]="reset.password"
+					   validateEqual="confirmPassword" reverse="true">
+
+				<label class="mdl-textfield__label" for="password"
+					   i18n="Password|Password of the user.">Password</label>
+				<span class="mdl-textfield__error">
+					<span *ngIf="f.controls.password?.errors?.required"
+						  i18n="Required Message|Message to the user that a field is required.">Required.</span>
+					<span *ngIf="f.controls.password?.errors?.minlength"
+						  i18n="Minimum Length Message|Message to the user that the password entered must be greater than 8 characters.">Must be at least 8 characters.</span>
+				</span>
+
+			</div>
+
+			<div mdl class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+				 [class.is-invalid]="f.controls.confirmPassword?.touched && !f.controls.confirmPassword.valid">
+
+				<input id="confirmPassword"
+					   name="confirmPassword"
+					   type="password"
+					   class="mdl-textfield__input"
+					   required
+					   minlength="8"
+					   [(ngModel)]="reset.confirm_password"
+					   validateEqual="password" reverse="false">
+					   <!--(blur)="onBlur($event)">-->
+
+				<label class="mdl-textfield__label" for="confirmPassword"
+					   i18n="Confirm Password|Confirm password of the user.">Confirm Password</label>
+				<span class="mdl-textfield__error">
+					<span *ngIf="f.controls.confirmPassword?.errors?.required"
+						  i18n="Required Message|Message to the user that a field is required.">Required.</span>
+					<span *ngIf="f.controls.confirmPassword?.errors?.minlength"
+						  i18n="Minimum Length Message|Message to the user that the password entered must be greater than 8 characters.">Must be at least 8 characters.</span>
+					<span *ngIf="!f.controls.confirmPassword?.errors?.validateEqual"
+						  i18n="Passwords Match Message|Message to the user that the passwords entered to not match.">Passwords do not match.</span>
+				</span>
+
+			</div>
+
+			<div class="btn-group">
+				<button mdl class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+						i18n="Reset Password Button|Reset password button label.">Reset Password</button> <div *ngIf="loading" mdl class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+			</div>
+
+			<p>&nbsp;</p>
+
+		</form>
+
+	</div>
+	<div class="mdl-card__menu">
+		<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+			<i class="material-icons">lock open</i>
+		</button>
+	</div>
+</div>
+
+<div mdl #success class="mdl-js-snackbar mdl-snackbar">
+	<div class="mdl-snackbar__text" #successText
+		 i18n="Pasword Reset Message|Message to the user that his password has been reset.">Your password has been reset! Click LOGIN to log into your account.</div>
+	<div class="snack-action" #successAction
+		 i18n="Login Link|Login text link the user can click to go to login page.">Login</div>
+	<button class="mdl-snackbar__action" type="button"></button>
+</div>
+
+<div mdl #error class="mdl-js-snackbar mdl-snackbar">
+	<div class="mdl-snackbar__text" #errorText
+		 i18n="Password Expired Message|Message to the user that his password reset has expired.">Your password reset has expired. Click SEND to request another reset link.</div>
+	<div class="snack-action" #errorAction
+		 i18n="Send Link|Send link for the user to resend password reset email.">Send</div>
+	<button class="mdl-snackbar__action" type="button"></button>
+</div>

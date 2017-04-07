@@ -1,0 +1,72 @@
+<div mdl class="mdl-layout mdl-js-layout mdl-layout--fixed-header" *ngIf="!isLogin">
+	<header class="mdl-layout__header">
+		<div class="mdl-layout__header-row">
+			<!-- Title -->
+			<span class="mdl-layout-title">
+				<img height="32" src="/assets/images/logo.svg">
+			</span>
+			<!-- Add spacer, to align navigation to the right -->
+			<div class="mdl-layout-spacer"></div>
+			<!-- Navigation. We hide it in small screens. -->
+			<nav class="mdl-navigation mdl-layout--large-screen-only">
+
+				<button *ngIf="isLogin" class="mdl-button mdl-js-button mdl-button--icon" (click)="logout();">
+					<i class="material-icons nav-icon">account_circle</i>
+				</button>
+				<a *ngIf="!isLogin" class="mdl-navigation__link" [routerLink]="['/login']">
+					LOGIN
+				</a>
+			</nav>
+		</div>
+	</header>
+	<main class="mdl-layout__content">
+		<div class="page-content">
+			<router-outlet></router-outlet>
+		</div>
+	</main>
+</div>
+
+<div mdl class="mdl-layout mdl-js-layout mdl-layout--fixed-header" *ngIf="isLogin" (click)="onClick($event)" #nav>
+	<header class="mdl-layout__header">
+		<div class="mdl-layout__header-row">
+			<!-- Title -->
+			<span class="mdl-layout-title">
+				<img height="32" src="/assets/images/logo.svg">
+			</span>
+			<!-- Add spacer, to align navigation to the right -->
+			<div class="mdl-layout-spacer"></div>
+			<!-- Navigation. We hide it in small screens. -->
+			<nav class="mdl-navigation mdl-layout--large-screen-only">
+
+				<button *ngIf="isLogin" class="mdl-button mdl-js-button mdl-button--icon" (click)="logout();">
+					<i class="material-icons nav-icon">account_circle</i>
+				</button>
+				<a *ngIf="!isLogin" class="mdl-navigation__link" [routerLink]="['/login']">
+					LOGIN
+				</a>
+			</nav>
+		</div>
+	</header>
+	<div mdl class="mdl-layout__drawer">
+		<!--<span class="mdl-layout-title">Title</span>-->
+		<nav class="mdl-navigation left-nav">
+			<a class="mdl-navigation__link" [routerLink]="['/dashboard']">
+				<i class="material-icons nav-icon">dashboard</i> Dashboard
+			</a>
+			<a class="mdl-navigation__link" [routerLink]="['/documents']">
+				<i class="material-icons nav-icon">send</i> Documents
+			</a>
+			<a class="mdl-navigation__link" [routerLink]="['/templates']">
+				<i class="material-icons nav-icon">description</i> Templates
+			</a>
+			<a class="mdl-navigation__link" [routerLink]="['/contacts']">
+				<i class="material-icons nav-icon">contacts</i> Contacts
+			</a>
+		</nav>
+	</div>
+	<main class="mdl-layout__content">
+		<div class="page-content">
+			<router-outlet></router-outlet>
+		</div>
+	</main>
+</div>

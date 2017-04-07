@@ -1,0 +1,72 @@
+<div class="container">
+	<h1>Templates</h1>
+	<div class="row">&nbsp;</div>
+	<div class="row">
+		<div class="col-md-3">
+			<ul class="list-group">
+				<a href="javascript:;" class="list-group-item" (click)="setFolderFilter('')">All</a>
+				<a href="javascript:;" *ngFor="let ff of folderFilters" class="list-group-item" (click)="setFolderFilter(ff.id)">
+					{{ ff.name }}
+					<span class="badge">{{ ff.count | number }}</span>
+				</a>
+			</ul>
+		</div>
+		<div class="col-md-9">
+
+			<div class="panel panel-default">
+
+				<div class="panel-heading">
+
+					<form class="form-inline" style="margin-bottom: 0px;">
+						<div class="form-group">
+							<label for="search">Search </label>
+							<input (keyup)="setSearchFilter($event)" type="text" class="form-control" id="search" name="search" placeholder="Type search ...">
+						</div>
+
+						<div class="form-group pull-right">
+							<label >Sort </label>
+							<select class="form-control" (change)="setSortFilter($event)">
+								<option value=""></option>
+								<option value="created_at">Recent Activity</option>
+								<option value="title">Title A-Z</option>
+								<option value="-title">Title Z-A</option>
+							</select>
+
+						</div>
+					</form>
+
+				</div>
+
+				<div class="search-results"
+					 infinite-scroll
+					 [infiniteScrollDistance]="1"
+					 [infiniteScrollThrottle]="100"
+					 (scrolled)="onScroll()" style="height: 100%">
+					<table class="table">
+						<thead>
+						<tr>
+							<th>Title</th>
+							<th>Last Updated</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr *ngIf="loadingTemps">
+							<td><spinner></spinner></td>
+						</tr>
+						<tr *ngFor="let tm of templates">
+							<td><a href [routerLink]="['/template/', tm.id]">{{ tm.title }}</a></td>
+							<td>{{ tm.updated_at * 1000 | date:'LLLL, M yyyy'}}</td>
+						</tr>
+						<tr *ngIf="loadingMore">
+							<td><spinner></spinner></td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+</div>

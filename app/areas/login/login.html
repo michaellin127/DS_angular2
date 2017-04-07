@@ -1,0 +1,95 @@
+<div mdl class="mdl-grid mdl-cell--hide-phone">
+	<div class="mdl-cell mdl-cell--12-col mdl-cell--hide-phone">&nbsp;</div>
+</div>
+
+<div mdl class="login-card mdl-card mdl-shadow--2dp">
+	<div class="mdl-card__title">
+		<h2 class="mdl-card__title-text"
+			i18n="Sign in to DropSign Title|Title used for sign in page.">Sign in to DropSign</h2>
+	</div>
+	<div class="mdl-card__supporting-text">
+
+		<form (ngSubmit)="onSubmit(f)" #f="ngForm" novalidate>
+
+			<div mdl class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+				 [class.is-invalid]="f.controls.email?.touched && (noEmail || f.controls.email.value == '')">
+
+				<input
+					id="email"
+					name="email"
+					class="mdl-textfield__input"
+					type="text"
+					required
+					pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+					[(ngModel)]="login.email">
+
+				<label class="mdl-textfield__label" for="email"
+					   i18n="Email Address|Email of the user.">Email</label>
+				<span class="mdl-textfield__error">
+					<span *ngIf="f.controls.email?.errors?.required"
+						  i18n="Required Message|Message to the user that a field is required.">Required.</span>
+					<span *ngIf="f.controls.email?.errors?.pattern"
+						  i18n="Valid Email Message|Message to the user that the email they've entered must be in a valid email format.">Must be a valid email.</span>
+					<span *ngIf="noEmail"
+						  i18n="Email Does Not Exist Message|Message to the user that the email entered does not exist in our system.">This email does not exist in our system.</span>
+				</span>
+			</div>
+
+			<div mdl class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+				 [class.is-invalid]="f.controls.password?.touched && (wrongPassword || f.controls.password.value == '')">
+
+				<input id="password"
+					   name="password"
+					   type="password"
+					   class="mdl-textfield__input"
+					   required
+					   minlength="8"
+					   [(ngModel)]="login.password">
+
+				<label class="mdl-textfield__label" for="password"
+					   i18n="Password|Password of the user.">Password</label>
+				<span class="mdl-textfield__error">
+					<span *ngIf="f.controls.password?.errors?.required"
+						  i18n="Required Message|Message to the user that a field is required.">Required.</span>
+					<span *ngIf="f.controls.password?.errors?.minlength"
+						  i18n="Minimum Length Message|Message to the user that the password entered must be greater than 8 characters.">Must be at least 8 characters.</span>
+					<span *ngIf="wrongPassword"
+						  i18n="Incorrect Password Message|Message to the user that the password entered is not correct.">Your password is not correct.</span>
+				</span>
+
+			</div>
+
+			<div class="btn-group">
+				<p class="mdl-typography--text-right">
+					<a [routerLink]="['/forgot']"
+					   i18n="Forget Password Link|A link for a user that has has forgotten his password.">Forget Password?</a>
+				</p>
+
+				<button mdl class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+						i18n="Log In Button|Log in button label.">Log In</button> <div *ngIf="loading" mdl class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+
+				<div class="btn-or"
+					 i18n="Or Text|Or text, providing another method for loggin in.">OR</div>
+
+				<div id="customBtn">
+					<button mdl class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+							i18n="Use My Google Account Button|Use my google account button label for users wanting to use google account to log in."
+					>Use My <img height="20" src="/assets/images/google.svg"> Account</button> <div *ngIf="gLoading" mdl class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+				</div>
+			</div>
+
+			<p>&nbsp;</p>
+
+			<p class="mdl-typography--text-center"
+			   i18n="Don't Have Account Link|Link for users that don't have an account and can click a link to sign up for one."
+			>Don't have an account? <a [routerLink]="['/signup']">Sign Up.</a></p>
+
+		</form>
+
+	</div>
+	<div class="mdl-card__menu">
+		<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+			<i class="material-icons">lock open</i>
+		</button>
+	</div>
+</div>
