@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="eaa87de7d1555ba01e39e5d0a27344b2101eaf57" datatype="html">
+        <source>Sign in to DropSign</source>
+        <target/>
+        <note priority="1" from="description">Title used for sign in page.</note>
+        <note priority="1" from="meaning">Sign in to DropSign Title</note>
+      </trans-unit>
+      <trans-unit id="a8d1b04ce5a95f7a06646ecf3b51d2c9414012c6" datatype="html">
+        <source>Email</source>
+        <target/>
+        <note priority="1" from="description">Email of the user.</note>
+        <note priority="1" from="meaning">Email Address</note>
+      </trans-unit>
+      <trans-unit id="43994a05154b06b1a9f17bb0336f19b4d5dfa835" datatype="html">
+        <source>Required.</source>
+        <target/>
+        <note priority="1" from="description">Message to the user that a field is required.</note>
+        <note priority="1" from="meaning">Required Message</note>
+      </trans-unit>
+      <trans-unit id="05358f76b4ae96ee9f240452a23ad45fa77740af" datatype="html">
+        <source>Must be a valid email.</source>
+        <target/>
+        <note priority="1" from="description">Message to the user that the email they&apos;ve entered must be in a valid email format.</note>
+        <note priority="1" from="meaning">Valid Email Message</note>
+      </trans-unit>
+      <trans-unit id="96e8952a231cbb10b2ea7fa9956fd3d16388f5b5" datatype="html">
+        <source>This email does not exist in our system.</source>
+        <target/>
+        <note priority="1" from="description">Message to the user that the email entered does not exist in our system.</note>
+        <note priority="1" from="meaning">Email Does Not Exist Message</note>
+      </trans-unit>
+      <trans-unit id="30baf8b3b2c5215039d5a27e23ecd8d76de25be9" datatype="html">
+        <source>Password</source>
+        <target/>
+        <note priority="1" from="description">Password of the user.</note>
+        <note priority="1" from="meaning">Password</note>
+      </trans-unit>
+      <trans-unit id="a24a533b3891e5eb67a8416a8f1357d1b6dec065" datatype="html">
+        <source>Must be at least 8 characters.</source>
+        <target/>
+        <note priority="1" from="description">Message to the user that the password entered must be greater than 8 characters.</note>
+        <note priority="1" from="meaning">Minimum Length Message</note>
+      </trans-unit>
+      <trans-unit id="6e126c7ff9e60e6c363b16dbec6e70c5f4e3a6c6" datatype="html">
+        <source>Your password is not correct.</source>
+        <target/>
+        <note priority="1" from="description">Message to the user that the password entered is not correct.</note>
+        <note priority="1" from="meaning">Incorrect Password Message</note>
+      </trans-unit>
+      <trans-unit id="1a71cf9bb63cfff79030f12c4df6f612cbc74e38" datatype="html">
+        <source>Forget Password?</source>
+        <target/>
+        <note priority="1" from="description">A link for a user that has has forgotten his password.</note>
+        <note priority="1" from="meaning">Forget Password Link</note>
+      </trans-unit>
+      <trans-unit id="d5d06db93b596d1b120b957a612c2733b475525a" datatype="html">
+        <source>Log In</source>
+        <target/>
+        <note priority="1" from="description">Log in button label.</note>
+        <note priority="1" from="meaning">Log In Button</note>
+      </trans-unit>
+      <trans-unit id="6e93a6b485315f3ab3d4e86af5c052c0b013e00c" datatype="html">
+        <source>OR</source>
+        <target/>
+        <note priority="1" from="description">Or text, providing another method for signing up.</note>
+        <note priority="1" from="meaning">Or Text</note>
+      </trans-unit>
+      <trans-unit id="f6bcaf01e6f9b21f21c98956829fe636f0a57d1d" datatype="html">
+        <source>Use My <x id="TAG_IMG" ctype="image"/> Account</source>
+        <target/>
+        <note priority="1" from="description">Use my google account button label for users wanting to use google account to sign up.</note>
+        <note priority="1" from="meaning">Use My Google Account Button</note>
+      </trans-unit>
+      <trans-unit id="8944446408c0c5010c707610765ee5e5b2fa1596" datatype="html">
+        <source>Don&apos;t have an account? <x id="START_LINK" ctype="x-a"/>Sign Up.<x id="CLOSE_LINK" ctype="x-a"/></source>
+        <target/>
+        <note priority="1" from="description">Link for users that don&apos;t have an account and can click a link to sign up for one.</note>
+        <note priority="1" from="meaning">Don&apos;t Have Account Link</note>
+      </trans-unit>
+      <trans-unit id="1b1546d4fb690edf46d0ef4638486f21292d9393" datatype="html">
+        <source>Sign up for DropSign</source>
+        <target/>
+        <note priority="1" from="description">Sign up for DropSign page title.</note>
+        <note priority="1" from="meaning">Signup Page Title</note>
+      </trans-unit>
+      <trans-unit id="02c480d85ec03a8c4023df08cb5649b69deeadc8" datatype="html">
+        <source>First Name</source>
+        <target/>
+        <note priority="1" from="description">First name of the user.</note>
+        <note priority="1" from="meaning">First Name</note>
+      </trans-unit>
+      <trans-unit id="cc615441e2b364063a4fc2a0e946bebfedc274ed" datatype="html">
+        <source>Last Name</source>
+        <target/>
+        <note priority="1" from="description">Last name of the user.</note>
+        <note priority="1" from="meaning">Last Name</note>
+      </trans-unit>
+      <trans-unit id="8e84c597d8f46eddc7d2209618e33e1989eeb8d8" datatype="html">
+        <source>This email already exists in our system.</source>
+        <target/>
+        <note priority="1" from="description">Message to the user that this email already exists in our system.</note>
+        <note priority="1" from="meaning">Email Exists Message</note>
+      </trans-unit>
+      <trans-unit id="154beae807a9362246abdfc8454986305481d5f9" datatype="html">
+        <source>By signing up, you agree to DropSign&apos;s <x id="START_LINK" ctype="x-a"/>terms and conditions<x id="CLOSE_LINK" ctype="x-a"/>.</source>
+        <target/>
+        <note priority="1" from="description">Message to the user that by signing up he agrees to DropSign terms.</note>
+        <note priority="1" from="meaning">Agree to Terms</note>
+      </trans-unit>
+      <trans-unit id="ecc4f499bb2b33bd154095e50b4d87cb898bb812" datatype="html">
+        <source>Sign Up</source>
+        <target/>
+        <note priority="1" from="description">Sign up button label.</note>
+        <note priority="1" from="meaning">Sign Up Button</note>
+      </trans-unit>
+      <trans-unit id="f96d5733ab1b279cc489aeb067b881a3cadee610" datatype="html">
+        <source>Already have an account? <x id="START_LINK" ctype="x-a"/>Log in.<x id="CLOSE_LINK" ctype="x-a"/></source>
+        <target/>
+        <note priority="1" from="description">Link for user to click to log in if they already have an account.</note>
+        <note priority="1" from="meaning">Already Have Account</note>
+      </trans-unit>
+      <trans-unit id="4f3b7180d7fe604fb26f913272ae668594eb621a" datatype="html">
+        <source>Reset Your Password</source>
+        <target/>
+        <note priority="1" from="description">Title used resetting user&apos;s password.</note>
+        <note priority="1" from="meaning">Reset Your Password Title</note>
+      </trans-unit>
+      <trans-unit id="2135b6811a599f2ca116d78ba10f5b8112586a8a" datatype="html">
+        <source>Reset Password</source>
+        <target/>
+        <note priority="1" from="description">Reset password button label.</note>
+        <note priority="1" from="meaning">Reset Password Button</note>
+      </trans-unit>
+      <trans-unit id="31f2a526323ad8e84b6c75e54717a2d0a545945e" datatype="html">
+        <source>Please check your email for a link to reset your password!</source>
+        <target/>
+        <note priority="1" from="description">Message for the user to check their email for reset password email message and link.</note>
+        <note priority="1" from="meaning">Check Email Message</note>
+      </trans-unit>
+      <trans-unit id="8fa35b1a792aa1074ff10038d0ee801b230cf8a0" datatype="html">
+        <source>Reset Your Password</source>
+        <target/>
+        <note priority="1" from="description">Title used for page to reset password.</note>
+        <note priority="1" from="meaning">Reset Your Password</note>
+      </trans-unit>
+      <trans-unit id="77e698d1f87c95e1214cb5e4a813128bfd1fb807" datatype="html">
+        <source>Confirm Password</source>
+        <target/>
+        <note priority="1" from="description">Confirm password of the user.</note>
+        <note priority="1" from="meaning">Confirm Password</note>
+      </trans-unit>
+      <trans-unit id="ab1800eaa701989a225a51e01f66759a5bd25f45" datatype="html">
+        <source>Passwords do not match.</source>
+        <target/>
+        <note priority="1" from="description">Message to the user that the passwords entered to not match.</note>
+        <note priority="1" from="meaning">Passwords Match Message</note>
+      </trans-unit>
+      <trans-unit id="bb0ab9e33d7932ac94e98c58d42eeac90cdcd61b" datatype="html">
+        <source>Your password has been reset! Click LOGIN to log into your account.</source>
+        <target/>
+        <note priority="1" from="description">Message to the user that his password has been reset.</note>
+        <note priority="1" from="meaning">Pasword Reset Message</note>
+      </trans-unit>
+      <trans-unit id="a814979fb8b683f6be8f919dae22866c44a49a85" datatype="html">
+        <source>Login</source>
+        <target/>
+        <note priority="1" from="description">Login text link the user can click to go to login page.</note>
+        <note priority="1" from="meaning">Login Link</note>
+      </trans-unit>
+      <trans-unit id="723b1749dd5335aafecf6e06f0fb0b7451ea8823" datatype="html">
+        <source>Your password reset has expired. Click SEND to request another reset link.</source>
+        <target/>
+        <note priority="1" from="description">Message to the user that his password reset has expired.</note>
+        <note priority="1" from="meaning">Password Expired Message</note>
+      </trans-unit>
+      <trans-unit id="cf3a9160e60639b084495bc661f8d1cdd4752cb7" datatype="html">
+        <source>Send</source>
+        <target/>
+        <note priority="1" from="description">Send link for the user to resend password reset email.</note>
+        <note priority="1" from="meaning">Send Link</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

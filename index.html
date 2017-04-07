@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DS</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<base href="/">
+
+	<link rel="stylesheet" href="node_modules/material-design-lite/material.min.css">
+	<script src="node_modules/material-design-lite/material.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<!--<link rel="stylesheet" href="assets/css/global.css">-->
+	<link rel="stylesheet" href="assets/css/icons/fontawesome/css/font-awesome.min.css">
+
+	<!-- API for google sign in -->
+	<script src="https://apis.google.com/js/api:client.js"></script>
+
+	<!-- Load libraries -->
+	<!-- Bootstrap -->
+	<!--<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">-->
+	<!-- Polyfill(s) for older browsers -->
+	<script src="node_modules/core-js/client/shim.min.js"></script>
+	<script src="node_modules/zone.js/dist/zone.js"></script>
+	<script src="node_modules/reflect-metadata/Reflect.js"></script>
+	<script src="node_modules/systemjs/dist/system.src.js"></script>
+	<!-- Configure SystemJS -->
+	<script src="systemjs.config.js"></script>
+	<script>
+		/**
+		 * start JIT:i18n
+		 */
+		// Get the locale id somehow
+		// document.locale = 'en-US';
+		document.locale = 'es';
+
+		// Map to the text plugin
+		// System.config({
+		// 	map: {
+		// 		text: 'systemjs-text-plugin.js'
+		// 	}
+		// });
+		/**
+		 * end JIT:i18n
+		 */
+		System.import('app').catch(function(err){ console.error(err); });
+	</script>
+
+</head>
+<!-- Display the application -->
+<body>
+<my-app>Loading...</my-app>
+
+</body>
+</html>
